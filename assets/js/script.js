@@ -4,6 +4,8 @@ var confirmNum;
 var confirmSymbol;
 var confirmUpper;
 var confirmLower;
+var choices;
+var pickChoices
 
 
 
@@ -19,26 +21,38 @@ function generatePassword() {
   long = parseInt(prompt("How many characters would you like your password? [8-128]"));
     
   if (long > 7 && long < 129 ) {
-    console.log(long);
+    //console.log(long);
+
+    // password requirements
     confirmNum = confirm("Include numbers?");
     confirmSymbol = confirm("Include special characters?");
     confirmUpper = confirm("Include Uppercase letters?");
     confirmLower = confirm("Include Lowercase letters?");
   }
-
+  // invalid number given
   else {
     alert("Provide a correct value!")
+    return generatePassword();
+
+  };
+
+  if (confirmLower && confirmUpper && confirmNum && confirmSymbol) {
+    choices = upper + lower + num + symbol;
+    
   }
-   return generatePassword();
-
-};
+  
 
 
 
 
 
+for (var i = 0; i < long; i++) {
+  var pickChoices = choices[Math.floor(Math.random() * choices.length)];
+  console.log(pickChoices);
+}
 
 
+}
 
 
 

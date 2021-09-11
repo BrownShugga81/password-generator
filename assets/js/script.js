@@ -5,7 +5,7 @@ var confirmSymbol;
 var confirmUpper;
 var confirmLower;
 var choices;
-var pickChoices
+var pickChoices;
 
 
 
@@ -37,21 +37,22 @@ function generatePassword() {
   };
 
   if (confirmLower && confirmUpper && confirmNum && confirmSymbol) {
-    choices = upper + lower + num + symbol;
+    choices = [...upper, ...lower, ...num, ...symbol];
+    console.log(choices)
     
   }
   
 
 
-
-
+// received help from AskBCS
+let returnVal = []
 
 for (var i = 0; i < long; i++) {
   var pickChoices = choices[Math.floor(Math.random() * choices.length)];
-  console.log(pickChoices);
+  returnVal.push(pickChoices);
 }
-
-
+console.log(returnVal)
+return returnVal.join(' ')
 }
 
 

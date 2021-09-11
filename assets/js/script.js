@@ -35,13 +35,66 @@ function generatePassword() {
     return generatePassword();
 
   };
-
+// possible combinations
   if (confirmLower && confirmUpper && confirmNum && confirmSymbol) {
-    choices = [...upper, ...lower, ...num, ...symbol];
-    console.log(choices)
-    
+    choices = [...lower, ...upper, ...num, ...symbol];
+  }
+
+  else if (confirmLower && confirmUpper && confirmNum) {
+    choices = [...lower, ...upper, ...num];
+  }
+
+  else if (confirmLower && confirmUpper && confirmSymbol) {
+    choices = [...lower, ...upper, ...symbol];
+  }
+
+  else if (confirmLower && confirmSymbol && confirmNum) {
+    choices = [...lower, ...symbol, ...num];
   }
   
+  else if (confirmLower && confirmUpper) {
+    choices = [...lower, ...upper];
+  }
+
+  else if (confirmLower && confirmNum) {
+    choices = [...lower, ...num];
+  }
+
+  else if (confirmLower && confirmSymbol) {
+    choices = [...lower, ...symbol];
+  }
+  
+  else if (confirmLower) {
+    choices = [...lower];
+  }
+
+  else if (confirmUpper && confirmNum && confirmSymbol) {
+    choices = [...upper, ...num, ...symbol];
+  }
+
+  else if (confirmUpper && confirmNum) {
+    choices = [...upper, ...num];
+  }
+
+  else if (confirmUpper && confirmSymbol) {
+    choices = [...upper, ...symbol];
+  }
+  
+  else if (confirmUpper) {
+    choices = [...upper];
+  }
+
+  else if (confirmNum && confirmSymbol) {
+    choices = [...num, ...symbol];
+  }
+
+  else if (confirmNum) {
+    choices = [...num];
+  }
+
+  else if (confirmSymbol) {
+    choices = [...symbol];
+  }
 
 
 // received help from AskBCS
